@@ -4,7 +4,7 @@
 		resultado = resultado.replace(valor[0],valor[1])
 	return resultado
 
-print('Resultado: %s' % convertidor(input('Ingresa el texto:\n')))
-
-while(input('¿Deseas ingresar otro texto? (Si: 1/ No: 0): ') == '1'):
-	print('Resultado: %s' % convertidor(input('Ingresa el texto:\n')))
+texto = input('Ingresa el texto:\n')
+while(texto != ''):
+	print('Resultado: %s' % convertidor(texto))
+	texto = input('Ingresa otro texto:\n')
