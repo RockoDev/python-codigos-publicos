@@ -24,3 +24,5 @@ i = input('Ingresa el tiempo:\n')
 while(i != ''):
 	print('Segundos: %s' % segundos(i))
 	i = input('Ingresa otro tiempo:\n')
+#Ejemplo de uso 1 (horas, minutos y segundos): 01:37:25
+#Ejemplo de uso 2 (minutos y segundos): 37:25
