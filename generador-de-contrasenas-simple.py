@@ -1,12 +1,23 @@
+# coding: utf-8
+
 import random
 
-c = [['a','b','c','d','e','f','g','h','i','j','k','l','m','n','ñ','o','p','q','r','s','t','u','v','w','x','y','z'],['A','B','C','D','E','F','G','H','I','J','K','L','M','N','Ñ','O','P','Q','R','S','T','U','V','W','X','Y','Z'],['0','1','2','3','4','5','6','7','8','9'],['-','.',',','_','@','#','$','%','&','/','(',')','=','?','¿','¡','!','<','>','{','}','[',']','+','*']]
+def password(length):
+    """Return the password"""
+    res = ""
+    for _ in range(int(length)):
+        res = res + random.choice(random.choice([
+            map(chr, xrange(ord('a'), ord('z')+1)),
+            map(chr, xrange(ord('A'), ord('Z')+1)),
+            map(str, range(10)),
+            [
+                'ñ', 'Ñ', '-', '.', ',', '_',
+                '@', '#', '$', '%', '&', '/',
+                '(', ')', '<', '>', '{', '}',
+                '[', ']', '¿', '?', '¡', '!',
+                '+', '*', '=',
+            ]
+        ]))
+    return res
 
-def contrasena(n):
-	r = ''
-	for caracter in range(0, int(n)):
-		r = r + random.choice(random.choice(c))
-	return r
-
-print(contrasena(input('Ingresa el numero de caracteres que quieres que tenga la contrseña:')))
-input('Presiona enter para salir.')
+print password(input('Ingresa el número de caracteres que quieres que tenga la contraseña:'))
